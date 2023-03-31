@@ -1,5 +1,7 @@
     package com.masai;
-	import java.io.IOException;
+	import java.awt.Color;
+import java.awt.PageAttributes.ColorType;
+import java.io.IOException;
 	import java.util.Scanner;
 
 	public class Main extends Login{
