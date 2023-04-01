@@ -10,6 +10,7 @@ String busType;
 String departureTime;
 String arrivalTime;
 int totalSeats;
+int busNumber;
 BusCreation(){
 	
 }
@@ -21,6 +22,7 @@ BusCreation(String busName,String source,String destination,String busType,Strin
 	this.departureTime=departureTime;
 	this.arrivalTime=arrivalTime;
 	this.totalSeats=totalSeats;
+	this.busNumber=(int)(Math.random()*100);
 }
 
 }
