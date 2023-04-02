@@ -50,11 +50,7 @@ public static void AddBus(int a) throws IOException, ClassNotFoundException {
     int totalSeats=sc.nextInt();
     
     
-
-    
-    
 	  arr.add(new BusCreation(busName,source,destination,busType,departureTime,arrivalTime,totalSeats));
-	  System.out.println(arr);
 	  
 	  FileOutputStream fos=new FileOutputStream("busDetails.p");
       ObjectOutputStream oos=new ObjectOutputStream(fos);
@@ -65,11 +61,31 @@ public static void AddBus(int a) throws IOException, ClassNotFoundException {
 
       fos.close();
       oos.close();
+      System.out.println("For Add Press - 1, For see all users Press - 2, For Delete Press - 3, For Logout Press - 4");
+      int b=sc.nextInt();
+      switch(b) {
+		case 1:
+			
+			AddBus(b);
+			break;
+		case 2:
+			userData();
+			break;
+		case 3:
+			Delete();
+			break;
+		case 4:
+			System.out.println("Logout SuccessFul");
+			System.out.println();
+			Main d1=new Main();
+	    	d1.user();
+			break;
+		}
 }
 
 static void userData() throws ClassNotFoundException, IOException{
 List<SignUp> arr=new ArrayList<>();
-	
+	Scanner sc=new Scanner(System.in);
 	FileInputStream fis=new FileInputStream("sudentdtata.p");
     
     ObjectInputStream ois=new ObjectInputStream(fis);
@@ -81,6 +97,20 @@ List<SignUp> arr=new ArrayList<>();
     for(SignUp p:arr){
         System.out.println("Name -> "+p.name+", Address -> "+p.add+", Mobile -> "+p.mobile+", Email -> "+p.email+", UserId -> "+p.ID+" ");
     }
+    System.out.println("For Add type - 1, For see all users type - 2, For Delete type - 3");
+    int a= sc.nextInt();
+    switch(a) {
+	case 1:
+		
+		AddBus(a);
+		break;
+	case 2:
+		userData();
+		break;
+	case 3:
+		Delete();
+		break;
+	}
 }
 
 static void Delete() throws  IOException, ClassNotFoundException{
@@ -111,7 +141,6 @@ static void Delete() throws  IOException, ClassNotFoundException{
     	if(st.busNumber!=s) {
     		 oos.writeObject(st);
     	}
-       
     }
 
     fos.close();

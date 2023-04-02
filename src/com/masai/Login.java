@@ -108,7 +108,7 @@ static void AdminLogin() throws IOException, ClassNotFoundException {
 		System.out.println("Welcome back "+Id);
 		System.out.println();
 		
-		System.out.println("For Add type - 1, For see all users type - 2, For Delete type - 3");
+		System.out.println("For Add press - 1, For see all users press - 2, For Delete press - 3");
 		int a=sc.nextInt();
 		
 		switch(a) {
@@ -170,7 +170,7 @@ static void userBusDetails() throws ClassNotFoundException, IOException{
     oos.close();
     System.out.println("Payment Successful, Happy Journey.");
     System.out.println();
-    System.out.println("");
+    System.out.println("For check bookings press 1, For Logout press 2");
     
     int ab=sc.nextInt();
     switch (ab) {
@@ -178,7 +178,9 @@ static void userBusDetails() throws ClassNotFoundException, IOException{
     	userTecket();
     	break;
     case 2:
-    	System.out.println("Logout Successfully");
+    	System.out.println("Logout Successful");
+    	Main d1=new Main();
+    	d1.user();
     	break;
     	default:
     		
@@ -205,6 +207,8 @@ static void userTecket() throws ClassNotFoundException, IOException{
     for(BusCreation p:arr){
         System.out.println("Bus Number -> "+p.busNumber+", Name -> "+p.busName+", Type -> "+p.busType+", Seats -> "+p.totalSeats+", Arrival Time -> "+p.arrivalTime+", Departure Time -> "+p.departureTime+" ");
     }
+   Main d1=new Main();
+   d1.Admin();
  }
 
 }
