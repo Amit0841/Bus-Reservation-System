@@ -18,7 +18,7 @@ bus Creation class <br />
 </div>
  
  
- <h1>Flow of this Project is Understandble by this pictur :</h1>
+ <h1>Flow of this Project is Understandble by these pictur :</h1>
 
  <img src="https://user-images.githubusercontent.com/115461383/229339501-f2e9a836-f504-437c-82f5-b56db99b0f13.png" alt="Logo" >
 <h1>Admin Side Chart Flow :</h1>
