@@ -1,21 +1,23 @@
 # standing-car-2134
-
+<H2>JA111 Construct Week Project </H2>
 <div align="center">
   
-<h1 align="center">Car Go </h1>
+<h1 align="center">Car Go  (Bus Ticket Reservation System)</h1>  
 
  This is a Indivdual project was completed within 5 days. In this Project I have not mde any UI. This is console based Project.
     <br />
     <br />
 
   </p>
-  <h3>Classes :</h3> Main class <br />
+  </div>
+  <h3>Classes :</h3>
+  <ul>
+<li> Main class </li>
+ <li>Sign up class </li>
+<li>Login class</li>
+<li>Admin class </li>
+<li>bus Creation class </li></ul>
 
-Sign up class<br  />
-Login class<br />
-Admin class <br />
-bus Creation class <br />
-</div>
  
  
  <h1>Flow of this Project is Understandble by these pictur :</h1>
