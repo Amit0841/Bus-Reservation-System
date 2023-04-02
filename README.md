@@ -9,10 +9,17 @@
     <br />
 
   </p>
-</div>
+  <h3>Classes :</h3> Main class <br />
 
-Main class <br />
-Sign up class<br />
+Sign up class<br  />
 Login class<br />
-Admin class<br />
-bus Creation class<br />
+Admin class <br />
+bus Creation class <br />
+</div>
+ 
+ 
+ <h1>Flow of this Project is Understandble by this pictur :</h1>
+![Whiteboard 1 -01](https://user-images.githubusercontent.com/115461383/229339501-f2e9a836-f504-437c-82f5-b56db99b0f13.png)
+
+<h1>Customer Side Chart Flow :</h1>
+![Whiteboard 2 -01](https://user-images.githubusercontent.com/115461383/229339506-1fc38846-0fc1-4fa7-acb4-a4b047f4ba39.png)
