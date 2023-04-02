@@ -81,25 +81,20 @@ import java.util.Scanner;
 	    	String Password=sc.next();
 	    	
 	    	sing.add(new SignUp(Email,Mobile,name,add,Password));
-	    	
-	    
+
 			FileOutputStream fos=new FileOutputStream("sudentdtata.p");
 	        ObjectOutputStream oos=new ObjectOutputStream(fos);
 	        
 	        for(SignUp st:sing){
 	            oos.writeObject(st);
 	        }
-
-	        
-	       
 	        fos.close();
 	        oos.close();
-	        
 	        userLogin();
 	    }
-  // Admin- .*.  *  .*.  *  .*.  *  .*.
+  // Admin login- .*.  *  .*.  *  .*.  *  .*.
 static void AdminLogin() throws IOException, ClassNotFoundException {
-	String AdminId="Admin";
+	
 	String Pass="Admin";
 	
 	Scanner sc=new Scanner(System.in);
@@ -109,30 +104,109 @@ static void AdminLogin() throws IOException, ClassNotFoundException {
 	System.out.println("Enter Password");
 	String Password=sc.next();
 	
-	if(AdminId.equals(Id) && Pass.equals(Password)) {
+	if(Pass.equals(Password)) {
 		System.out.println("Welcome back "+Id);
 		System.out.println();
-		System.out.println("For Add type - 1, For Upate type - 2,For Delete type - 3");
+		
+		System.out.println("For Add type - 1, For see all users type - 2, For Delete type - 3");
 		int a=sc.nextInt();
+		
 		switch(a) {
 		case 1:
 			
 			AddBus(a);
 			break;
 		case 2:
-			
+			userData();
 			break;
 		case 3:
-			
+			Delete();
 			break;
 		}
-		
 	}else {
 		System.out.println("You are not Admin");
 	}
 }
+//Admin login- .*. ^ * ^ .*. ^ * ^ .*. ^ * ^ .*.  ^ 
 
-		
+    //User book bus  *.*   *.*
+static void userBusDetails() throws ClassNotFoundException, IOException{
+	
+	List<BusCreation> arr=new ArrayList<>();
+
+	FileInputStream fis=new FileInputStream("busDetails.p");
+    
+    ObjectInputStream ois=new ObjectInputStream(fis);
+     
+    while(fis.available()>0){
+    	BusCreation std=(BusCreation) ois.readObject();
+  	 arr.add(std);
+   }
+    
+    for(BusCreation p:arr){
+        System.out.println("Bus Number -> "+p.busNumber+", Name -> "+p.busName+", Type -> "+p.busType+", Seats -> "+p.totalSeats+", Arrival Time -> "+p.arrivalTime+", Departure Time -> "+p.departureTime+" ");
+    }
+    System.out.println("For booking Enter Bus Number");
+    Scanner sc=new Scanner(System.in);
+	
+	int BusNumber=sc.nextInt();
+	System.out.println("Number of passenger");
+	int Pasenger_Count=sc.nextInt();
+	System.out.println("Your total price is - "+Pasenger_Count*350);
+	 System.out.println();
+	System.out.println("For pay now Press 1");
+	int c=sc.nextInt();
+	
+	if(c==1) {
+		FileOutputStream fos=new FileOutputStream("User_Booking.p");
+    ObjectOutputStream oos=new ObjectOutputStream(fos);
+    
+    for(BusCreation st:arr){
+    	if(BusNumber==st.busNumber) {
+        oos.writeObject(st);
+    	}
+    }
+    fos.close();
+    oos.close();
+    System.out.println("Payment Successful, Happy Journey.");
+    System.out.println();
+    System.out.println("");
+    
+    int ab=sc.nextInt();
+    switch (ab) {
+    case 1:
+    	userTecket();
+    	break;
+    case 2:
+    	System.out.println("Logout Successfully");
+    	break;
+    	default:
+    		
+    		break;
+    }
+    
 	}
+	
+  }
+//   User book bus  ^^ .*. ^^ .*. ^^
+
+static void userTecket() throws ClassNotFoundException, IOException{
+	List<BusCreation> arr=new ArrayList<>();
+
+	FileInputStream fis=new FileInputStream("User_Booking.p");
+    
+    ObjectInputStream ois=new ObjectInputStream(fis);
+     
+    while(fis.available()>0){
+    	BusCreation std=(BusCreation) ois.readObject();
+  	 arr.add(std);
+   }
+    
+    for(BusCreation p:arr){
+        System.out.println("Bus Number -> "+p.busNumber+", Name -> "+p.busName+", Type -> "+p.busType+", Seats -> "+p.totalSeats+", Arrival Time -> "+p.arrivalTime+", Departure Time -> "+p.departureTime+" ");
+    }
+ }
+
+}
 
 
