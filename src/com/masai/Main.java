@@ -10,7 +10,7 @@ import javax.swing.plaf.synth.SynthScrollBarUI;
 		
 		static void user() throws ClassNotFoundException, IOException {
 			Scanner sc=new Scanner(System.in);
-			System.out.println("For LogIn type - 1, For SingUp type - 2,For Admin Login type - 3");
+			System.out.println("For LogIn press - 1, For SingUp press - 2,For Admin Login press - 3");
 			int a=sc.nextInt();
 			switch(a){
 			case 1:
@@ -25,7 +25,7 @@ import javax.swing.plaf.synth.SynthScrollBarUI;
 				AdminLogin();
 				break;
 				default:
-					System.out.println("Wrong Crendecial");
+					System.out.println("Wrong Credendial");
 					user();
 					break;
 			}
@@ -33,7 +33,7 @@ import javax.swing.plaf.synth.SynthScrollBarUI;
 		
 		static void Admin() throws ClassNotFoundException, IOException{
 			Scanner sc=new Scanner(System.in);
-			System.out.println("For Show All Bus type - 1, For Show Yout Tecket type - 2,For logout type - 3");
+			System.out.println("For Show All Bus press - 1, For Show Your Tecket press - 2,For logout press - 3");
 			int b=sc.nextInt();
 			switch(b){
 			case 1:
@@ -49,7 +49,7 @@ import javax.swing.plaf.synth.SynthScrollBarUI;
 				
 				break;
 			default:
-				System.out.println("Wrong Crendecial");
+				System.out.println("Wrong Credendial");
 				Admin();
 				break;
 			}
