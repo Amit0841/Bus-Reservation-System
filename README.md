@@ -8,13 +8,13 @@ The Bus Reservation System, known as Car Go, is a console-based application deve
  This is a Indivdual project was completed within 5 days. In this Project I have not mde any UI. This is console based Project.
     <br />
     <br />
-                             
+                              
   </p>
   </div>
   <h3>Classes :</h3>
   <ul>
 <li> Main class </li>  
- <li>Sign up class </li>
+ <li>Sign up class </li>  
 <li>Login class</li>
 <li>Admin class </li>
 <li>bus Creation class </li></ul>
